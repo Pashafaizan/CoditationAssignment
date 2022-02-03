@@ -21,14 +21,13 @@ function CreateProductForm() {
   };
   const submitData = async (event) => {
     event.preventDefault();
-    console.log("faizn pasha");
 
     const res = await fetchData("/create/product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formValues),
     });
-    console.log(res.success);
+
     if (res.success) {
       setAlert(true);
       setFormValues({
@@ -49,8 +48,6 @@ function CreateProductForm() {
       setAlert(false);
     }, 5000);
   }, []);
-
-  console.log(formValues);
 
   return (
     <div>

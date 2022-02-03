@@ -4,7 +4,7 @@
 .product_container{
 
     margin-top: 20px;
-     /* border: 10px solid dodgerblue; */
+    
    border-top-left-radius: 20px;
    border-bottom-right-radius:20px;
    border-bottom-left-radius:10px;
@@ -15,14 +15,12 @@
   width: 600px;
 
 }
-
 .product_container  form div {
     text-align: left;
 }
 .product_container  form button {
     background-color: rgba(13,110,253);
 }
-
 .product_heading{
     display: flex;
     justify-content: center;
@@ -31,17 +29,12 @@
     background-color:grey ;
     width: 100%;
     color: white;
-    /* font-size: larger; */
-    font-weight: bolder;
-    
+    font-weight: bolder;  
 }
-
 .back_icon{
-    /* position:absolute;  */
-    display: flex;
+     display: flex;
     align-items: center;
 }
-
 .back_icon ion-icon{
     font-size:30px;
     text-align: left;
@@ -57,8 +50,6 @@
     opacity: 0.4;
     cursor: pointer;
 }
-
-
 .input{
     width: 100%;
     padding: 4px;
@@ -69,6 +60,3 @@
     
 }
 
-@media screen and (max-width: 425px) {
-
-}

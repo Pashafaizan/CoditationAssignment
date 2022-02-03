@@ -6,11 +6,10 @@ import { Link, useLocation } from "react-router-dom";
 import "./ProductList.css";
 function ProductList() {
   const [list, setList] = React.useState([]);
-  const [category,setCategory] = React.useState([]);
-  const [query,setQuery] = React.useState('all');
+  const [category, setCategory] = React.useState([]);
+  const [query, setQuery] = React.useState("all");
 
   React.useEffect(async () => {
-    console.log(query,"QUERY");
     const res = await fetchData(`/products?cateogry=${query}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -18,11 +17,10 @@ function ProductList() {
 
     if (res.success) {
       setList(res.data);
-      console.log(list);
     }
   }, [query]);
 
-  React.useEffect(async() => {
+  React.useEffect(async () => {
     const list = await fetchData(`/list/categories`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -32,43 +30,41 @@ function ProductList() {
 
       return;
     }
-  },[])
+  }, []);
 
   return (
     <>
       <div className="product_list_category">
         <div className="flex">
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Select
-            aria-label="Default select example"
-            onChange={(e) => {
-              console.log(e.target.value,"F")
-              setQuery(e.target.value)
-            }}
-          >
-            <option value={'all'} >All</option>
-            {category.map((e) => {
-              return (
-                <>
-                  <option value={e._id}>{e.category_name}</option>
-                </>
-              );
-            })}
-          </Form.Select>
-        </Form.Group>
-        <h1 style={{ textAlign: "center" }}>Product List</h1>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Select
+              aria-label="Default select example"
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+            >
+              <option value={"all"}>All</option>
+              {category.map((e) => {
+                return (
+                  <>
+                    <option value={e._id}>{e.category_name}</option>
+                  </>
+                );
+              })}
+            </Form.Select>
+          </Form.Group>
+          <h1 style={{ textAlign: "center" }}>Product List</h1>
         </div>
         <hr />
         <div className="product_list_container">
-          {list.length > 0 ?
+          {list.length > 0 ? (
             list.map((e, i) => {
-              console.log(e);
               return (
                 <Card
                   bg="success"
                   key={i}
                   text={"light" === "light" ? "dark" : "white"}
-                  style={{ width: "18rem",height:300 }}
+                  style={{ width: "18rem", height: 300 }}
                   className="mb-2"
                 >
                   <Card.Header>
@@ -84,17 +80,25 @@ function ProductList() {
                     </div>
                   </Card.Header>
                   <Card.Body>
-                    <Card.Title><span className="tag">Brand: </span>{e.brand}</Card.Title>
-                    <Card.Text ><span className="tag" >Price :</span> Rs.{e.price}</Card.Text>
-                    <Card.Text><span className="tag">Color: </span>{e.product_color}</Card.Text>
+                    <Card.Title>
+                      <span className="tag">Brand: </span>
+                      {e.brand}
+                    </Card.Title>
+                    <Card.Text>
+                      <span className="tag">Price :</span> Rs.{e.price}
+                    </Card.Text>
+                    <Card.Text>
+                      <span className="tag">Color: </span>
+                      {e.product_color}
+                    </Card.Text>
                     <div className="des">{e.description}</div>
-                     </Card.Body>
+                  </Card.Body>
                 </Card>
               );
             })
-            :
+          ) : (
             <div className="no-content">No Product</div>
-            }
+          )}
         </div>
       </div>
     </>

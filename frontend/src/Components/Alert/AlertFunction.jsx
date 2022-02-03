@@ -6,11 +6,6 @@ function AlertFunction({ varient, message, des }) {
       <Alert variant={varient}>
         <Alert.Heading>{message}</Alert.Heading>
         <p>{des}</p>
-        {/* <hr />
-  <p className="mb-0">
-    Whenever you need to, be sure to use margin utilities to keep things nice
-    and tidy.
-  </p> */}
       </Alert>
     </div>
   );

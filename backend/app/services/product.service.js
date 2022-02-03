@@ -1,8 +1,7 @@
 const { product, category } = require("../models/product.model");
-
 exports.GetProductList = async (category) => {
   try {
-    const query = category == 'all' ? {} : {product_categories:category};
+    const query = category == "all" ? {} : { product_categories: category };
     console.log(query);
     let data = await product.find(query);
     if (data) {
@@ -15,12 +14,11 @@ exports.GetProductList = async (category) => {
     console.log(error);
   }
 };
-
 exports.createProduct = async (data) => {
   try {
-    const category_ids = data.product_categories.map(v=>{
+    const category_ids = data.product_categories.map((v) => {
       return v._id;
-    })
+    });
     data.product_categories = category_ids;
     const productData = await new product(data);
     await productData.save();
@@ -34,15 +32,16 @@ exports.createProduct = async (data) => {
   }
 };
 exports.getProductById = async (id) => {
-  console.log(id);
   try {
     let data = await product.findById({ _id: id });
-    let categories = await Promise.all(data.product_categories.map(async(v)=>{
+    let categories = await Promise.all(
+      data.product_categories.map(async (v) => {
         const c = await category.findById(v);
-        return {_id:v,category_name: c.category_name}
-    }))
+        return { _id: v, category_name: c.category_name };
+      })
+    );
     data.product_categories = categories;
-    console.log(data);
+
     if (data) {
       return {
         data,
@@ -55,7 +54,6 @@ exports.getProductById = async (id) => {
 };
 exports.updateProduct = async (id, productData) => {
   try {
-      console.log(productData, "FAIZAN")
     let data = await product.findByIdAndUpdate(
       id,
       { ...productData },

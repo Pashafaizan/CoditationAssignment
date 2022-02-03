@@ -4,11 +4,8 @@
     justify-content: start;
     align-items: center;
     cursor: pointer;
-   
     list-style: none;
-    
-}
-
+    }
 .header_item > ion-icon{
     font-size: 20px;
     margin: 5px;

@@ -14,20 +14,19 @@ function Categories() {
       category_name,
       parent_id,
     };
-    console.log("faizan pasha");
-    console.log(payload);
+
     const res = await fetchData("/add/category", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-    console.log(res.success);
+
     if (res.success) {
       setEffect("effect");
       setParentCategory(" ");
       setName(" ");
       setAlert(true);
-      console.log("faizan pasha ");
+
       window.location.reload();
     }
   };
@@ -50,7 +49,7 @@ function Categories() {
   }, []);
 
   return (
-    <div >
+    <div>
       <Container className="product_container">
         <h1>Category Form</h1>
         <hr />
@@ -68,7 +67,6 @@ function Categories() {
           <Form.Select
             aria-label="Default select example"
             onChange={(e) => {
-              console.log(e.target.value);
               setParentCategory(e.target.value);
             }}
           >

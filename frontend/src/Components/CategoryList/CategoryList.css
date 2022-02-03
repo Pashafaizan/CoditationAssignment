@@ -6,19 +6,12 @@
     margin:auto;
     margin-top: 20px;
     width:60%;
-    /* border: 10px solid gray; */
     border-top-left-radius: 20px;
     border-bottom-right-radius:20px;
     border-bottom-left-radius:10px;
     border-top-right-radius: 10px;
    padding: 10px 30px;
-   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
-}
-
-.product_list_category h1 {
-  /* margin-bottom: 50px; */
-}
-
+  }
 .accordion-header button {
   background-color: whitesmoke;
   margin-bottom: 2px;

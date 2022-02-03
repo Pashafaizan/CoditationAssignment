@@ -15,9 +15,6 @@ const productSchema = new Schema({
     type: String,
   },
   product_categories: [],
-  product_discount: {
-    type: Decimal128,
-  },
   brand: { type: String },
 });
 
@@ -27,8 +24,6 @@ const categorySchema = new Schema({
   },
   parent_id: mongoose.Schema.Types.ObjectId,
 });
-
-// const Post = mongoose.model('post',postSchema);
 const product = mongoose.model("product", productSchema);
 const category = mongoose.model("productCatrgory", categorySchema);
 module.exports = {

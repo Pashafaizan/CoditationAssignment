@@ -10,9 +10,8 @@ function CategoryList() {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    console.log(res.data);
+
     setList(res.data);
-    console.log(list);
   }, []);
 
   return (
@@ -24,24 +23,23 @@ function CategoryList() {
             <Accordion>
               <Accordion.Item eventKey={i}>
                 <Accordion.Header>{e.name}</Accordion.Header>
-                {
-                e.childCategories.length !=0 ? 
-                    e.childCategories.map((child) => {
+                {e.childCategories.length != 0 ? (
+                  e.childCategories.map((child) => {
                     return (
-                        <>
+                      <>
                         <Accordion.Body>
-                            <div>{child.category_name}</div>
+                          <div>{child.category_name}</div>
                         </Accordion.Body>
-                        </>
+                      </>
                     );
-                    })
-                :
-                    <>
+                  })
+                ) : (
+                  <>
                     <Accordion.Body>
-                        <div>No Category</div>
+                      <div>No Category</div>
                     </Accordion.Body>
-                    </>
-                }
+                  </>
+                )}
               </Accordion.Item>
             </Accordion>
           </>

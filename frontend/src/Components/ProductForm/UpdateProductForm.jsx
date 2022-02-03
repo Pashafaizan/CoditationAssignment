@@ -19,7 +19,6 @@ function UpdateProductForm() {
   });
 
   const { id } = useParams();
-  console.log(id);
 
   const submitData = async (event) => {
     event.preventDefault();
@@ -29,7 +28,7 @@ function UpdateProductForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formValues),
     });
-    console.log(res);
+
     if (res.success) {
       setAlert(true);
       setTimeout(() => {
@@ -38,7 +37,6 @@ function UpdateProductForm() {
     }
   };
   const handleChange = (key, data) => {
-    console.log(key,data,"FAIZAN ")
     setFormValues({ ...formValues, [key]: data });
   };
 
@@ -47,7 +45,7 @@ function UpdateProductForm() {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    console.log(res);
+
     const {
       name,
       product_color,
@@ -67,7 +65,7 @@ function UpdateProductForm() {
       field,
     });
   }, []);
-  console.log(formValues);
+
   React.useEffect(() => {
     setInterval(() => {
       setAlert(false);
