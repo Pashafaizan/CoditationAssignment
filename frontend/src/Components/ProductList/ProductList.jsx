@@ -10,6 +10,7 @@ function ProductList() {
   const [query,setQuery] = React.useState(null);
 
   React.useEffect(async () => {
+    console.log(query);
     const res = await fetchData(`/products?cateogry=${query}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },

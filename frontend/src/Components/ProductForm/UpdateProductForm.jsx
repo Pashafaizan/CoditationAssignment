@@ -38,6 +38,15 @@ function UpdateProductForm() {
     }
   };
   const handleChange = (key, data) => {
+    if ([key] == "product_categories") {
+      console.log("faizan pasha");
+      let arr = [];
+      data.map((e, i) => {
+        arr[i] = e._id;
+      });
+      setFormValues({ ...formValues, [key]: arr });
+      return;
+    }
     setFormValues({ ...formValues, [key]: data });
   };
 
@@ -61,7 +70,7 @@ function UpdateProductForm() {
       product_color,
       description,
       brand,
-      categories: product_categories,
+      product_categories,
       price,
       field,
     });

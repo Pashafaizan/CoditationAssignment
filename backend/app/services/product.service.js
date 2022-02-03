@@ -2,8 +2,11 @@ const { product, category } = require("../models/product.model");
 
 exports.GetProductList = async (category) => {
   try {
+    console.log(category);
     const query = category == null ? {} : {product_categories:category};
-    let data = await product.find(query);
+    console.log(query);
+    let data = await product.find({parent_id:query});
+    // console.log(data);
     if (data) {
       return {
         data,

@@ -1,9 +1,10 @@
 const productService = require("../services/product.service")
 
 exports.AllProducts = (req,res,next)=>{
-    const {category} = req.query;
+    let data = req.query;
+    console.log(data)
     
-    productService.GetProductList(category).then((returnData)=>{
+    productService.GetProductList(data).then((returnData)=>{
         res.json(returnData)
     }).catch(next)
 }

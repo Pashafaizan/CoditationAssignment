@@ -12,13 +12,14 @@ function CreateProductForm() {
     price: "",
     description: "",
     brand: "",
-    category: [],
+    product_categories: [],
     field: "",
   });
 
   const handleChange = (key, data) => {
     console.log(data);
-    if ([key] == "category") {
+    if ([key] == "product_categories") {
+      console.log("faizan pasha");
       let arr = [];
       data.map((e, i) => {
         arr[i] = e._id;
@@ -35,7 +36,7 @@ function CreateProductForm() {
     const res = await fetchData("/create/product", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formValues, product_categories: formValues.category }),
+      body: JSON.stringify(formValues),
     });
     console.log(res.success);
     if (res.success) {
@@ -46,7 +47,7 @@ function CreateProductForm() {
         price: "",
         description: "",
         brand: "",
-        category: [],
+        product_categories: [],
         field: "",
       });
       window.location.reload();

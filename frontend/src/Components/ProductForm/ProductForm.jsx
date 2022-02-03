@@ -100,8 +100,8 @@ function ProductForm(props) {
             <Form.Label className="text">Category</Form.Label>
               <MultiSelect
                 options={categories}
-                value={props.product.categories}
-                handleChange={(v) => props.handleChange("categories", v)}
+                value={props.product.product_categories}
+                handleChange={(v) => props.handleChange("product_categories", v)}
               />
             </Form.Group>
             <Button variant="secondary" onClick={props.onSubmit} type="submit">
