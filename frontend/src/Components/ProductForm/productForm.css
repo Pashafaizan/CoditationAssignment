@@ -59,4 +59,27 @@
     border-radius: 4px;
     
 }
+@media screen and (max-width: 425px) {
 
+
+.product_container {
+    width:360px;
+    padding: 10px 10px;
+}
+.box{
+    margin:none;
+}
+  }
+
+  @media screen and (max-width: 375px) {
+
+
+    .product_container {
+        width:340px;
+        padding: 10px 10px;
+    }
+    .box{
+        margin:none;
+    }
+      }
+    
