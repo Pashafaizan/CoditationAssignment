@@ -52,7 +52,7 @@ function Categories() {
   return (
     <div >
       <Container className="product_container">
-        <h1>Categories Form</h1>
+        <h1>Category Form</h1>
         <hr />
         <Form.Group className="mb-3" controlId="formBaiscNamr">
           <Form.Control
@@ -72,7 +72,7 @@ function Categories() {
               setParentCategory(e.target.value);
             }}
           >
-            <option>Open parent category select menu</option>
+            <option>Parent Category</option>
             {category.map((e) => {
               return (
                 <>

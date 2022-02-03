@@ -1,10 +1,11 @@
 const productService = require("../services/product.service")
 
 exports.AllProducts = (req,res,next)=>{
-   
-      productService.GetProductList().then((returnData)=>{
-          res.json(returnData)
-      }).catch(next)
+    const {category} = req.query;
+    
+    productService.GetProductList(category).then((returnData)=>{
+        res.json(returnData)
+    }).catch(next)
 }
 
 exports.productCreate = async(req,res,next)=>{

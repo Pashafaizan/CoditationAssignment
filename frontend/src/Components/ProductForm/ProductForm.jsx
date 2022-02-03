@@ -37,9 +37,8 @@ function ProductForm(props) {
           }}
         >
           <ion-icon name="arrow-back-circle-outline"></ion-icon>
-        </div>
         <h1>Product Form</h1>
-        <div>
+        </div>
           <Form>
             <Form.Group className="mb-3" controlId="formBaiscNamr">
               <Form.Label className="text">Name</Form.Label>
@@ -98,6 +97,7 @@ function ProductForm(props) {
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicBrand">
+            <Form.Label className="text">Category</Form.Label>
               <MultiSelect
                 options={categories}
                 value={props.product.categories}
@@ -108,7 +108,6 @@ function ProductForm(props) {
               {props.btntext}
             </Button>
           </Form>
-        </div>
       </Container>
       <div
         style={{

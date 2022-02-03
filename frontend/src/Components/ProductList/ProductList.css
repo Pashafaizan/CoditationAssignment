@@ -20,16 +20,15 @@
     justify-content: start;
     align-items: self-start;
 }
-.product_list_container >div:hover{
-    opacity:0.2;
+.product_list_container > div:hover {
+    opacity:0.7;
     cursor: pointer;
 }
 .bg-success {
       background-color: white !important;
 }
 .des{
-    font-size:18px;
-    font-weight:bolder;
+    text-align: justify;
 
 }
 .tag{

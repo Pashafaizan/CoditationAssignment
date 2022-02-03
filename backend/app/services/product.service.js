@@ -1,8 +1,9 @@
 const { product, category } = require("../models/product.model");
 
-exports.GetProductList = async () => {
+exports.GetProductList = async (category) => {
   try {
-    let data = await product.find();
+    const query = category == null ? {} : {product_categories:category};
+    let data = await product.find(query);
     if (data) {
       return {
         data,

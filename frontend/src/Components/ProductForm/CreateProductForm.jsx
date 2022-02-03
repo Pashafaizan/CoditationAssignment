@@ -67,7 +67,7 @@ function CreateProductForm() {
         handleChange={handleChange}
         product={formValues}
         onSubmit={submitData}
-        btntext="submit"
+        btntext="Submit"
       />
       {alert && (
         <AlertFunction

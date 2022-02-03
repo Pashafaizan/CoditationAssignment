@@ -26,3 +26,19 @@
 .header_item:hover{
     background-color: grey;
 }
+
+.navbar-brand {
+    color: white !important;
+    font-weight: bold;
+    font-size: larger;
+    letter-spacing: 1.5px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex h1 {
+    flex: 1;
+}

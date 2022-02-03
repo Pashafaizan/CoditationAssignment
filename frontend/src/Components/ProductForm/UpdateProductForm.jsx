@@ -79,7 +79,7 @@ function UpdateProductForm() {
         handleChange={handleChange}
         onSubmit={submitData}
         product={formValues}
-        btntext="Update Form"
+        btntext="Update Product"
       />
       {alert && (
         <AlertFunction

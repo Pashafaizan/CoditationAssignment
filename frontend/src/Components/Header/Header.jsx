@@ -11,9 +11,9 @@ import "./Header.css";
 function Header() {
   return (
     <div>
-      <Navbar bg="secondary" expand={false}>
+      <Navbar bg="primary" expand={false}>
         <Container fluid>
-          <Navbar.Brand href="/">Coditation Assignment</Navbar.Brand>
+          <Navbar.Brand  href="/">Coditation Assignment</Navbar.Brand>
           <Navbar.Toggle aria-controls="offcanvasNavbar" />
           <Navbar.Offcanvas
             id="offcanvasNavbar"
@@ -22,7 +22,7 @@ function Header() {
           >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title id="offcanvasNavbarLabel">
-                Coditation Assignment
+                Menu
               </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
