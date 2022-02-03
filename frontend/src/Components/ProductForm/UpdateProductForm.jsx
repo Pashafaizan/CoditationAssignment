@@ -38,15 +38,7 @@ function UpdateProductForm() {
     }
   };
   const handleChange = (key, data) => {
-    if ([key] == "product_categories") {
-      console.log("faizan pasha");
-      let arr = [];
-      data.map((e, i) => {
-        arr[i] = e._id;
-      });
-      setFormValues({ ...formValues, [key]: arr });
-      return;
-    }
+    console.log(key,data,"FAIZAN ")
     setFormValues({ ...formValues, [key]: data });
   };
 

@@ -17,16 +17,6 @@ function CreateProductForm() {
   });
 
   const handleChange = (key, data) => {
-    console.log(data);
-    if ([key] == "product_categories") {
-      console.log("faizan pasha");
-      let arr = [];
-      data.map((e, i) => {
-        arr[i] = e._id;
-      });
-      setFormValues({ ...formValues, [key]: arr });
-      return;
-    }
     setFormValues({ ...formValues, [key]: data });
   };
   const submitData = async (event) => {

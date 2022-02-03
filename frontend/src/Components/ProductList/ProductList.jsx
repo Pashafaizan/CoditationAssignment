@@ -7,10 +7,10 @@ import "./ProductList.css";
 function ProductList() {
   const [list, setList] = React.useState([]);
   const [category,setCategory] = React.useState([]);
-  const [query,setQuery] = React.useState(null);
+  const [query,setQuery] = React.useState('all');
 
   React.useEffect(async () => {
-    console.log(query);
+    console.log(query,"QUERY");
     const res = await fetchData(`/products?cateogry=${query}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -42,10 +42,11 @@ function ProductList() {
           <Form.Select
             aria-label="Default select example"
             onChange={(e) => {
+              console.log(e.target.value,"F")
               setQuery(e.target.value)
             }}
           >
-            <option value={null} >All</option>
+            <option value={'all'} >All</option>
             {category.map((e) => {
               return (
                 <>
@@ -59,7 +60,7 @@ function ProductList() {
         </div>
         <hr />
         <div className="product_list_container">
-          {list.length > 0 &&
+          {list.length > 0 ?
             list.map((e, i) => {
               console.log(e);
               return (
@@ -90,7 +91,10 @@ function ProductList() {
                      </Card.Body>
                 </Card>
               );
-            })}
+            })
+            :
+            <div className="no-content">No Product</div>
+            }
         </div>
       </div>
     </>

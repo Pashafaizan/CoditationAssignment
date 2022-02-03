@@ -2,11 +2,9 @@ const { product, category } = require("../models/product.model");
 
 exports.GetProductList = async (category) => {
   try {
-    console.log(category);
-    const query = category == null ? {} : {product_categories:category};
+    const query = category == 'all' ? {} : {product_categories:category};
     console.log(query);
-    let data = await product.find({parent_id:query});
-    // console.log(data);
+    let data = await product.find(query);
     if (data) {
       return {
         data,
@@ -20,6 +18,10 @@ exports.GetProductList = async (category) => {
 
 exports.createProduct = async (data) => {
   try {
+    const category_ids = data.product_categories.map(v=>{
+      return v._id;
+    })
+    data.product_categories = category_ids;
     const productData = await new product(data);
     await productData.save();
 
