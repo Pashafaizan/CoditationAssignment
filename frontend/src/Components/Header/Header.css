@@ -1,0 +1,28 @@
+.header_item{
+    margin: 3px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+   
+    list-style: none;
+    
+}
+
+.header_item > ion-icon{
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+.header_item > div{
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color:black;
+}
+.header_item:hover{
+    background-color: grey;
+}

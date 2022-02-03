@@ -1,0 +1,70 @@
+.box{
+    margin: auto;
+}
+.text{
+    left: -47%;
+    position: relative;
+}
+.product_container{
+
+    margin-top: 20px;
+     border: 10px solid gray;
+   border-top-left-radius: 20px;
+   border-bottom-right-radius:20px;
+   border-bottom-left-radius:10px;
+   border-top-right-radius: 10px;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  position: relative;
+
+}
+.product_heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color:grey ;
+    width: 100%;
+    color: white;
+    /* font-size: larger; */
+    font-weight: bolder;
+    
+}
+
+.back_icon{
+    position:absolute;
+ 
+        position: absolute;
+        top: 27px;
+        left: 20px;
+    
+}
+.back_icon >ion-icon{
+    font-size:25px;
+    cursor: pointer;
+}
+.product_heading:hover {
+background-color: grey;
+opacity: 0.4;
+cursor: pointer;
+}
+
+
+.input{
+    width: 100%;
+    padding: 4px;
+    outline:none;
+    border: none;
+   border: 1px solid #ced4da;
+    border-radius: 4px;
+    
+}
+.input:focus{
+    transition: #ced4da .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+@media screen and (max-width: 425px) {
+    .text{
+        left: -40%;
+        position: relative;
+    }
+  }
